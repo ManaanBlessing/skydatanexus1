@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downstream Data Collection | SkyDataNexus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #003366;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background-color: #004080;
+        }
+        
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SkyDataNexus</div>
+        <nav>
+            <ul>
+                <li><a href="Upstream.html">Upstream Form</a></li>
+                <li><a href="Midstream.html">Midstream Form</a></li>
+                <li><a href="Downstream.html">Downstream Form</a></li>
+                <li><a href="Common.html">common Form</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="content">
+        <div class="form-container">
+            <h1>Downstream Data Collection Form</h1>
+             <form  action="Downstream.php" method="POST">
+        
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName" required>
+                
+                
+
+                    <label for="facilityName">Refinery/Petrochemical Facility Name</label>
+                    <input type="text" id="facilityName" name="facilityName" required>
+                
+                
+    
+                    <label for="location">Facility Location</label>
+                    <input type="text" id="location" name="location" required>
+                
+                
+                
+                    <label for="reportDate">Report Date</label>
+                    <input type="date" id="reportDate" name="reportDate" required>
+                
+                
+                
+                    <label for="crudeInput">Crude Oil Input (barrels/day)</label>
+                    <input type="number" id="crudeInput" name="crudeInput" step="1" required>
+                
+
+                    <label for="productOutput">Product Output</label>
+                    <div style="margin-bottom: 0.5rem;">
+                        <label style="display: inline-block; width: 30%;">Gasoline (barrels/day)</label>
+                        <input type="number" style="width: 68%;" id="gasolineOutput" name="gasolineOutput" step="1">
+                    </div>
+                    <div style="margin-bottom: 0.5rem;">
+                        <label style="display: inline-block; width: 30%;">Diesel (barrels/day)</label>
+                        <input type="number" style="width: 68%;" id="dieselOutput" name="dieselOutput" step="1">
+                    </div>
+                    <div style="margin-bottom: 0.5rem;">
+                        <label style="display: inline-block; width: 30%;">Jet Fuel (barrels/day)</label>
+                        <input type="number" style="width: 68%;" id="jetFuelOutput" name="jetFuelOutput" step="1">
+                    </div>
+                    <div>
+                        <label style="display: inline-block; width: 30%;">Other (barrels/day)</label>
+                        <input type="number" style="width: 68%;" id="otherOutput" name="otherOutput" step="1">
+                    </div>
+                
+                
+                
+                    <label for="capacityUtilization">Capacity Utilization (%)</label>
+                    <input type="number" id="capacityUtilization" name="capacityUtilization" min="0" max="100" step="1">
+                
+                
+                
+                    <label for="maintenanceStatus">Maintenance Status</label>
+                    <select id="maintenanceStatus" name="maintenanceStatus">
+                        <option value="normal">Normal Operations</option>
+                        <option value="planned">Planned Maintenance</option>
+                        <option value="unplanned">Unplanned Maintenance</option>
+                        <option value="turnaround">Turnaround</option>
+                    </select>
+                
+                
+                
+                    <label for="emissions">CO2 Emissions (tons)</label>
+                    <input type="number" id="emissions" name="emissions" step="1">
+                
+                
+            
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes"></textarea>
+                    
+                
+                
+                <input type="submit" class="btn-submit" value = "Submit">     
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 SkyDataNexus. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('downstreamForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Downstream data submitted successfully!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

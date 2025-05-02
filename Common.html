@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Data Collection | SkyDataNexus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #003366;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background-color: #004080;
+        }
+        
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SkyDataNexus</div>
+        <nav>
+            <ul>
+                <li><a href="Upstream.html">Upstream Form</a></li>
+                <li><a href="Midstream.html">Midstream Form</a></li>
+                <li><a href="Downstream.html">Downstream Form</a></li>
+                <li><a href="Common.html">common Form</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="content">
+        <div class="form-container">
+            <h1>Common Data Collection Form</h1>
+             <form  action="Common.php" method="POST">
+                
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName" required>
+                
+                
+                
+                    <label for="contactPerson">Contact Person</label>
+                    <input type="text" id="contactPerson" name="contactPerson" required>
+
+                
+            
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                
+                
+            
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                
+                
+            
+                    <label for="sector">Industry Sector</label>
+                    <select id="sector" name="sector" required>
+                        <option value="">Select sector</option>
+                        <option value="upstream">Upstream (Exploration & Production)</option>
+                        <option value="midstream">Midstream (Transportation & Storage)</option>
+                        <option value="downstream">Downstream (Refining & Marketing)</option>
+                        <option value="integrated">Integrated</option>
+                        <option value="service">Oilfield Services</option>
+                    </select>
+                
+                
+                
+                    <label for="dataType">Type of Data Being Submitted</label>
+                    <select id="dataType" name="dataType" required>
+                        <option value="">Select data type</option>
+                        <option value="production">Production Data</option>
+                        <option value="inventory">Inventory Data</option>
+                        <option value="sales">Sales Data</option>
+                        <option value="financial">Financial Data</option>
+                        <option value="operational">Operational Data</option>
+                        <option value="other">Other</option>
+                    </select>
+                
+                
+                
+                    <label for="reportPeriod">Reporting Period</label>
+                    <select id="reportPeriod" name="reportPeriod" required>
+                        <option value="">Select period</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="quarterly">Quarterly</option>
+                        <option value="annual">Annual</option>
+                    </select>
+    
+                
+            
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" name="startDate" required>
+            
+                
+        
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" name="endDate" required>
+                
+                
+            
+                    <label for="dataFormat">Data Format</label>
+                    <select id="dataFormat" name="dataFormat">
+                        <option value="excel">Excel Spreadsheet</option>
+                        <option value="csv">CSV File</option>
+                        <option value="pdf">PDF Report</option>
+                        <option value="api">API Connection</option>
+                        <option value="manual">Manual Entry</option>
+                    </select>
+            
+                
+            
+                    <label for="confidentiality">Confidentiality Level</label>
+                    <select id="confidentiality" name="confidentiality" required>
+                        <option value="public">Public</option>
+                        <option value="confidential">Confidential</option>
+                        <option value="highly_confidential">Highly Confidential</option>
+                    </select>
+            
+                
+
+                    <label for="notes">Additional Notes or Comments</label>
+                    <textarea id="notes" name="notes"></textarea>
+    
+                
+            
+                    <label>
+                        <input type="checkbox" name="terms" required> I agree to the terms and conditions of data submission
+                
+                    </label>
+                
+                
+                <input type="submit" class="btn-submit" value = "Submit">
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 SkyDataNexus. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('commonForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Common data submitted successfully!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
